@@ -1,5 +1,5 @@
 # Builder image
-FROM golang:1.19.2 as builder
+FROM golang:1.20.0 as builder
 
 # Set workspace
 WORKDIR /src/jainishshah17/tugger/
@@ -11,7 +11,7 @@ COPY ./ /src/jainishshah17/tugger/
 RUN cd cmd/tugger && go install
 
 # Runnable image
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian11
 
 # Copy microservice executable from builder image
 COPY --from=builder /go/bin/tugger /
