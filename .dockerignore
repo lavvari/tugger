@@ -5,6 +5,7 @@ deployment
 test
 tls
 webhook
+config.yml
 _config.yml
 Dockerfile
 LICENSE
